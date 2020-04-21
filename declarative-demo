@@ -8,14 +8,12 @@ pipeline{
       stage("Git clone"){
        steps{
           git credentialsId: 'sample', url: 'https://github.com/venkateshreddy1388/Demo.git'
-        }
+         }
       }
       stage("Maven Build"){
-          step{
+          steps{
              sh "mvn clean package"
           }
-      }
-      
-   }
-  
-}
+       }
+    }
+ }
